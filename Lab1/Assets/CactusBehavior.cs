@@ -25,18 +25,16 @@ public class CactusBehavior : MonoBehaviour
 
         print(currentDistance);
 
-        if (currentDistance < collisionDistance)
+        bool isClose = currentDistance < collisionDistance;
+        if (isClose)
         {
-
             print("Collision!");
-            cactusAAnimator.SetBool("isCloseToOther", true);
-            cactusBAnimator.SetBool("isCloseToOther", true);
         }
-        else
-        {
-            cactusAAnimator.SetBool("isCloseToOther", false);
-            cactusBAnimator.SetBool("isCloseToOther", false);
-        }
-
+        SetIsCloseToOther(isClose);
+    }
+    void SetIsCloseToOther(bool isClose)
+    {
+        cactusAAnimator.SetBool("isCloseToOther", isClose);
+        cactusBAnimator.SetBool("isCloseToOther", isClose);
     }
 }
