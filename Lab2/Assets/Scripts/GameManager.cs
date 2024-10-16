@@ -13,7 +13,16 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // Lock and hide the cursor at the start of the game
-        LockCursor();
+        //LockCursor();
+    }
+
+    private void Update()
+    {
+        // Check if the player presses the 'Q' key to quit
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
     }
 
     public void IncreaseScore()
@@ -42,17 +51,28 @@ public class GameManager : MonoBehaviour
         return _score;
     }
 
-    // Method to lock and hide the cursor
     public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;  // Locks the cursor to the center of the screen
         Cursor.visible = false;                    // Hides the cursor
     }
 
-    // Method to unlock and show the cursor
     public void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;    // Unlocks the cursor
         Cursor.visible = true;                     // Makes the cursor visible
+    }
+    private void QuitGame()
+    {
+        // For testing in Editor
+        Debug.Log("Quitting the game...");
+
+        // Quit the game (works in built versions, but not in Editor)
+        Application.Quit();
+
+        // Stop play mode if in editor
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
