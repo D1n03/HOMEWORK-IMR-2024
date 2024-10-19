@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GolfScene1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 81bfac655edd2104bbb46c21c2b1a661, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 1e3ba805e158d95428289de5c617090e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bc0e5e1f2e5eef644a702c7e6106eb74, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 49206c34e198ad943ba47e4d27e5e6b5, type: 2}
